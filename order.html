@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAN Pizza Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #dc3545;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .pizza-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .pizza-card img {
+            width: 100%;
+            border-radius: 4px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .order-form {
+            margin-top: 1rem;
+        }
+        .form-input {
+            margin: 0.3rem 0;
+            padding: 0.3rem;
+            width: 90%;
+        }
+        .order-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        .order-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the WAN Pizza Store</h1>
+    </header>
+    <div class="container">
+        <!-- Margherita Pizza -->
+        <div class="pizza-card">
+            <h2>Margherita Pizza</h2>
+            <img src="https://example.com/images/margherita.jpg" alt="Margherita Pizza">
+            <p>Classic margherita with mozzarella and basil.</p>
+            <form class="order-form" action="https://yourapigateway.execute-api.region.amazonaws.com/prod/order" method="POST">
+                <input type="hidden" name="pizza_type" value="Margherita">
+                <input class="form-input" type="number" name="quantity" min="1" value="1" required>
+                <input class="form-input" type="text" name="customer_name" placeholder="Your Name" required>
+                <input class="form-input" type="email" name="customer_email" placeholder="Your Email" required>
+                <button type="submit" class="order-btn">Order Now</button>
+            </form>
+        </div>
+
+        <!-- Pepperoni Pizza -->
+        <div class="pizza-card">
+            <h2>Pepperoni Pizza</h2>
+            <img src="https://example.com/images/pepperoni.jpg" alt="Pepperoni Pizza">
+            <p>Spicy pepperoni with mozzarella cheese.</p>
+            <form class="order-form" action="https://yourapigateway.execute-api.region.amazonaws.com/prod/order" method="POST">
+                <input type="hidden" name="pizza_type" value="Pepperoni">
+                <input class="form-input" type="number" name="quantity" min="1" value="1" required>
+                <input class="form-input" type="text" name="customer_name" placeholder="Your Name" required>
+                <input class="form-input" type="email" name="customer_email" placeholder="Your Email" required>
+                <button type="submit" class="order-btn">Order Now</button>
+            </form>
+        </div>
+
+        <!-- BBQ Chicken Pizza -->
+        <div class="pizza-card">
+            <h2>BBQ Chicken Pizza</h2>
+            <img src="https://example.com/images/bbq_chicken.jpg" alt="BBQ Chicken Pizza">
+            <p>Grilled chicken, BBQ sauce, and onions.</p>
+            <form class="order-form" action="https://yourapigateway.execute-api.region.amazonaws.com/prod/order" method="POST">
+                <input type="hidden" name="pizza_type" value="BBQ Chicken">
+                <input class="form-input" type="number" name="quantity" min="1" value="1" required>
+                <input class="form-input" type="text" name="customer_name" placeholder="Your Name" required>
+                <input class="form-input" type="email" name="customer_email" placeholder="Your Email" required>
+                <button type="submit" class="order-btn">Order Now</button>
+            </form>
+        </div>
+
+        <!-- Veggie Supreme -->
+        <div class="pizza-card">
+            <h2>Veggie Supreme</h2>
+            <img src="https://example.com/images/veggie.jpg" alt="Veggie Supreme">
+            <p>Loaded with bell peppers, olives, and mushrooms.</p>
+            <form class="order-form" action="https://yourapigateway.execute-api.region.amazonaws.com/prod/order" method="POST">
+                <input type="hidden" name="pizza_type" value="Veggie Supreme">
+                <input class="form-input" type="number" name="quantity" min="1" value="1" required>
+                <input class="form-input" type="text" name="customer_name" placeholder="Your Name" required>
+                <input class="form-input" type="email" name="customer_email" placeholder="Your Email" required>
+                <button type="submit" class="order-btn">Order Now</button>
+            </form>
+        </div>
+
+        <!-- Hawaiian Pizza -->
+        <div class="pizza-card">
+            <h2>Hawaiian Pizza</h2>
+            <img src="https://example.com/images/hawaiian.jpg" alt="Hawaiian Pizza">
+            <p>Ham and pineapple on a cheesy base.</p>
+            <form class="order-form" action="https://yourapigateway.execute-api.region.amazonaws.com/prod/order" method="POST">
+                <input type="hidden" name="pizza_type" value="Hawaiian">
+                <input class="form-input" type="number" name="quantity" min="1" value="1" required>
+                <input class="form-input" type="text" name="customer_name" placeholder="Your Name" required>
+                <input class="form-input" type="email" name="customer_email" placeholder="Your Email" required>
+                <button type="submit" class="order-btn">Order Now</button>
+            </form>
+        </div>
+
+        <!-- Meat Lovers -->
+        <div class="pizza-card">
+            <h2>Meat Lovers</h2>
+            <img src="https://example.com/images/meat_lovers.jpg" alt="Meat Lovers Pizza">
+            <p>Pepperoni, sausage, bacon, and ham.</p>
+            <form class="order-form" action="https://yourapigateway.execute-api.region.amazonaws.com/prod/order" method="POST">
+                <input type="hidden" name="pizza_type" value="Meat Lovers">
+                <input class="form-input" type="number" name="quantity" min="1" value="1" required>
+                <input class="form-input" type="text" name="customer_name" placeholder="Your Name" required>
+                <input class="form-input" type="email" name="customer_email" placeholder="Your Email" required>
+                <button type="submit" class="order-btn">Order Now</button>
+            </form>
+        </div>
+
+        <!-- Seafood Pizza -->
+        <div class="pizza-card">
+            <h2>Seafood Pizza</h2>
+            <img src="https://example.com/images/seafood.jpg" alt="Seafood Pizza">
+            <p>Classic seafood with mozzarella and basil.</p>
+            <form class="order-form" action="https://yourapigateway.execute-api.region.amazonaws.com/prod/order" method="POST">
+                <input type="hidden" name="pizza_type" value="Seafood">
+                <input class="form-input" type="number" name="quantity" min="1" value="1" required>
+                <input class="form-input" type="text" name="customer_name" placeholder="Your Name" required>
+                <input class="form-input" type="email" name="customer_email" placeholder="Your Email" required>
+                <button type="submit" class="order-btn">Order Now</button>
+            </form>
+        </div>
+
+        <!-- Mutton Pizza -->
+        <div class="pizza-card">
+            <h2>Mutton Pizza</h2>
+            <img src="https://example.com/images/mutton.jpg" alt="Mutton Pizza">
+            <p>Classic grilled mutton with mozzarella and basil.</p>
+            <form class="order-form" action="https://yourapigateway.execute-api.region.amazonaws.com/prod/order" method="POST">
+                <input type="hidden" name="pizza_type" value="Mutton">
+                <input class="form-input" type="number" name="quantity" min="1" value="1" required>
+                <input class="form-input" type="text" name="customer_name" placeholder="Your Name" required>
+                <input class="form-input" type="email" name="customer_email" placeholder="Your Email" required>
+                <button type="submit" class="order-btn">Order Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
